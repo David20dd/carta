@@ -2,215 +2,177 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ffd6e8, #fff0f5, #ffe6f2);
+    background: radial-gradient(circle at top, #ff758f, #590d22, #1a0008);
     min-height: 100vh;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .contenedor {
-    width: 90%;
-    max-width: 750px;
-    margin: auto;
-    text-align: center;
-    padding-top: 40px;
-    position: relative;
+    width: 100%;
+    padding: 20px;
     z-index: 2;
 }
 
+.carta {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 650px;
+    margin: auto;
+    padding: 38px;
+    border-radius: 28px;
+    box-shadow: 0 0 30px rgba(255, 45, 85, 0.8);
+    text-align: center;
+    animation: aparecer 1s ease;
+    border: 3px solid #ff4d6d;
+}
+
+.icono {
+    font-size: 60px;
+    animation: latir 1s infinite;
+}
+
 h1 {
-    color: #b30059;
-    font-size: 42px;
-    text-shadow: 2px 2px 5px white;
-    animation: aparecer 2s ease;
+    color: #9d0208;
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #ffb3c1;
 }
 
-.sobre {
-    width: 280px;
-    height: 180px;
-    background: #ff6fae;
-    margin: 40px auto 25px;
-    position: relative;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    animation: flotar 3s infinite ease-in-out;
+h2 {
+    color: #c1121f;
+    margin-top: 25px;
 }
 
-.tapa {
-    width: 0;
-    height: 0;
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-bottom: 90px solid #ff9acb;
-    position: absolute;
-    top: 0;
-    left: 0;
+p {
+    color: #3a0ca3;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-.carta-pequena {
-    width: 210px;
-    height: 100px;
-    background: white;
-    position: absolute;
-    top: 45px;
-    left: 35px;
-    border-radius: 8px;
-    color: #b30059;
+.saludo {
+    font-size: 24px;
+    color: #d00000;
     font-weight: bold;
-    padding-top: 25px;
-    box-sizing: border-box;
+}
+
+.detalles {
+    background: linear-gradient(135deg, #fff0f3, #ffe5ec);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 25px 0;
+    border: 2px dashed #e5383b;
+    box-shadow: inset 0 0 15px rgba(255, 77, 109, 0.25);
+}
+
+.detalles p {
+    margin: 8px 0;
+    color: #800f2f;
+    font-weight: 600;
+}
+
+.botones {
+    margin-top: 25px;
+    position: relative;
+    height: 85px;
 }
 
 button {
-    background: #b30059;
-    color: white;
     border: none;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-size: 18px;
+    padding: 15px 28px;
+    margin: 10px;
+    border-radius: 35px;
+    font-size: 17px;
     cursor: pointer;
-    box-shadow: 0 6px 15px rgba(179, 0, 89, 0.35);
     transition: 0.3s;
-}
-
-button:hover {
-    background: #ff3385;
-    transform: scale(1.08);
-}
-
-.carta {
-    display: none;
-    background: rgba(255, 255, 255, 0.92);
-    margin-top: 35px;
-    padding: 35px;
-    border-radius: 25px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.20);
-    color: #5c0030;
-    line-height: 1.8;
-    font-size: 18px;
-    animation: mostrarCarta 1.5s ease;
-    border: 3px solid #ff99cc;
-}
-
-.carta h2 {
-    color: #cc0066;
-    font-size: 34px;
-}
-
-.carta h3 {
-    color: #b30059;
-    font-size: 25px;
-}
-
-.final {
-    font-size: 24px;
     font-weight: bold;
-    color: #cc0066;
 }
 
-.frases {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 25px 0;
+button:first-child {
+    background: linear-gradient(135deg, #ff006e, #d00000);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 0, 80, 0.8);
 }
 
-.frases span {
-    background: #ffe6f2;
-    color: #b30059;
-    padding: 10px 18px;
-    border-radius: 25px;
+button:first-child:hover {
+    background: linear-gradient(135deg, #d00000, #6a040f);
+    transform: scale(1.1);
+}
+
+#btnNo {
+    background: #f8f9fa;
+    color: #6a040f;
+    position: absolute;
+    border: 1px solid #ffccd5;
+}
+
+#respuesta {
+    margin-top: 20px;
+    font-size: 23px;
+    color: #d00000;
     font-weight: bold;
-    border: 2px solid #ff99cc;
-    animation: brillo 2s infinite alternate;
 }
 
-.corazon {
-    position: fixed;
-    color: #ff3385;
-    font-size: 24px;
-    animation: subir 6s linear infinite;
-    z-index: 1;
+.fuego {
+    position: absolute;
+    font-size: 80px;
+    top: 8%;
+    left: 8%;
+    animation: flotar 4s infinite ease-in-out;
+    opacity: 0.75;
+}
+
+.fuego2 {
+    top: 70%;
+    left: 85%;
+    font-size: 90px;
+    animation-delay: 1s;
+}
+
+.fuego3 {
+    top: 78%;
+    left: 10%;
+    font-size: 70px;
+    animation-delay: 2s;
 }
 
 @keyframes aparecer {
     from {
         opacity: 0;
-        transform: translateY(-25px);
+        transform: translateY(40px) scale(0.95);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes latir {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.22);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
 @keyframes flotar {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
     }
+
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-25px) rotate(8deg);
     }
+
     100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes mostrarCarta {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes brillo {
-    from {
-        box-shadow: 0 0 5px #ff99cc;
-    }
-    to {
-        box-shadow: 0 0 18px #ff3385;
-    }
-}
-
-@keyframes subir {
-    0% {
-        bottom: -40px;
-        opacity: 1;
-    }
-    100% {
-        bottom: 110%;
-        opacity: 0;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 32px;
-    }
-
-    .sobre {
-        width: 230px;
-        height: 155px;
-    }
-
-    .tapa {
-        border-left: 115px solid transparent;
-        border-right: 115px solid transparent;
-        border-bottom: 78px solid #ff9acb;
-    }
-
-    .carta-pequena {
-        width: 175px;
-        left: 28px;
-        font-size: 14px;
-    }
-
-    .carta {
-        padding: 25px;
-        font-size: 16px;
+        transform: translateY(0) rotate(0deg);
     }
 }
