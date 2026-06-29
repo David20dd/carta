@@ -1,29 +1,15 @@
-function abrirCarta() {
-    let carta = document.getElementById("carta");
-    let sobre = document.getElementById("sobre");
+function aceptar() {
+    let respuesta = document.getElementById("respuesta");
 
-    carta.style.display = "block";
-    sobre.style.display = "none";
-
-    crearMuchosCorazones();
+    respuesta.innerHTML = "Eso quería escuchar 😍🔥<br>Prepárate, porque esta noche la temperatura no baja 😉❤️‍🔥";
 }
 
-function crearCorazon() {
-    let corazon = document.createElement("div");
-    corazon.classList.add("corazon");
-    corazon.innerHTML = "❤️";
+function moverBoton() {
+    let boton = document.getElementById("btnNo");
 
-    corazon.style.left = Math.random() * 100 + "vw";
-    corazon.style.fontSize = Math.random() * 25 + 18 + "px";
-    corazon.style.animationDuration = Math.random() * 3 + 4 + "s";
+    let x = Math.floor(Math.random() * 280);
+    let y = Math.floor(Math.random() * 55);
 
-    document.body.appendChild(corazon);
-
-    setTimeout(function() {
-        corazon.remove();
-    }, 7000);
-}
-
-function crearMuchosCorazones() {
-    setInterval(crearCorazon, 350);
+    boton.style.left = x + "px";
+    boton.style.top = y + "px";
 }
