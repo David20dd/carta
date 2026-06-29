@@ -3,58 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación con fuego</title>
+    <title>Una invitación íntima</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="fuego">🔥</div>
-    <div class="fuego fuego2">❤️‍🔥</div>
-    <div class="fuego fuego3">💋</div>
+    <div class="decoracion fuego1">🔥</div>
+    <div class="decoracion fuego2">❤️‍🔥</div>
+    <div class="decoracion beso1">💋</div>
+    <div class="decoracion beso2">😏</div>
 
-    <div class="contenedor">
-        <div class="carta">
-            <div class="icono">❤️‍🔥</div>
+    <main class="contenedor">
+        <section class="carta">
 
-            <h1>Una invitación con mucho fuego</h1>
+            <div class="icono-principal">❤️‍🔥</div>
 
-            <p class="saludo">
-                Hola, mi tentación favorita 😏🔥
+            <h1>Una invitación solo para ti</h1>
+
+            <p class="subtitulo">
+                Mi amor, esta noche no quiero escribirte con indirectas...
             </p>
 
-            <p>
-                Hoy no vengo con una invitación cualquiera. Vengo con una propuesta peligrosa:
-                tú y yo, una noche especial, miradas intensas y cero ganas de portarnos demasiado bien.
-            </p>
+            <div class="mensaje">
+                <p>
+                    Quiero invitarte a una noche íntima, intensa y especial.
+                    Una noche para estar cerca, mirarnos despacio, besarnos sin prisa
+                    y dejarnos llevar por todo lo que sentimos.
+                </p>
 
-            <p>
-                Quiero invitarte a una cita donde sobren las excusas, falte la distancia
-                y cada sonrisa tenga doble intención. 😉
-            </p>
+                <p>
+                    Te quiero conmigo, cerquita, sin distracciones, sin apuros
+                    y con muchas ganas de hacer el amor contigo.
+                </p>
 
-            <p>
-                El plan es simple: buena comida, música suave, luces bajitas y muchas ganas de
-                que esta noche se vuelva inolvidable.
-            </p>
-
-            <div class="detalles">
-                <p>📍 Lugar: Donde estemos cerquita</p>
-                <p>🕒 Hora: Cuando empiece la tentación</p>
-                <p>🍷 Plan: Comer, reír, coquetear y dejarnos llevar</p>
-                <p>💋 Código de entrada: un beso lento</p>
-                <p>🔥 Advertencia: puede subir la temperatura</p>
+                <p>
+                    Quiero consentirte, provocarte sonrisas, encender la noche
+                    y recordarte con cada detalle cuánto me gustas.
+                </p>
             </div>
 
-            <h2>Entonces... ¿te atreves a decir que sí? 😈❤️‍🔥</h2>
+            <div class="tarjeta-plan">
+                <h2>El plan de esta noche 😏🔥</h2>
+
+                <div class="item">
+                    <span>🌙</span>
+                    <p>Una noche solo para nosotros dos</p>
+                </div>
+
+                <div class="item">
+                    <span>🎶</span>
+                    <p>Música suave, luces bajas y ambiente privado</p>
+                </div>
+
+                <div class="item">
+                    <span>💋</span>
+                    <p>Besos lentos, abrazos largos y mucha picardía</p>
+                </div>
+
+                <div class="item">
+                    <span>❤️‍🔥</span>
+                    <p>Hacer el amor contigo, con deseo, ternura e intensidad</p>
+                </div>
+
+                <div class="item">
+                    <span>🔥</span>
+                    <p>Advertencia: esta invitación puede subir la temperatura</p>
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <h2>Entonces, mi amor...</h2>
+                <p>¿Aceptas esta invitación íntima conmigo?</p>
+            </div>
 
             <div class="botones">
-                <button onclick="aceptar()">Sí, me atrevo 🔥</button>
-                <button id="btnNo" onmouseover="moverBoton()">No puedo 😳</button>
+                <button class="btn-si" onclick="aceptar()">Sí, quiero estar contigo ❤️‍🔥</button>
+                <button class="btn-no" id="btnNo" onclick="respuestaNo()">Me haces sonrojar 😳</button>
             </div>
 
-            <p id="respuesta"></p>
-        </div>
-    </div>
+            <div id="respuesta" class="respuesta"></div>
+
+            <button class="btn-secreto" onclick="mostrarSecreto()">
+                Toca aquí para leer el mensaje secreto 💌
+            </button>
+
+            <div id="secreto" class="secreto">
+                <p>
+                    Mensaje secreto: esta noche quiero que sientas cuánto te deseo,
+                    pero también cuánto te amo. Quiero una noche bonita, intensa,
+                    cómplice y solo nuestra. 😘🔥
+                </p>
+            </div>
+
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
