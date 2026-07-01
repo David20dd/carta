@@ -8,11 +8,10 @@ body {
   min-height: 100vh;
   font-family: "Segoe UI", Arial, sans-serif;
   color: white;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   background:
     radial-gradient(circle at 20% 20%, rgba(255, 0, 140, 0.28), transparent 28%),
     radial-gradient(circle at 85% 15%, rgba(70, 130, 255, 0.28), transparent 30%),
@@ -115,7 +114,6 @@ body {
   position: relative;
   z-index: 2;
   width: min(1000px, 94vw);
-  padding: 58px 0;
 }
 
 .tarjeta {
@@ -297,7 +295,7 @@ body {
   }
 }
 
-/* Rosa */
+/* Rosa mejorada */
 
 .rosa {
   position: absolute;
@@ -492,114 +490,6 @@ body {
   box-shadow: 0 0 17px rgba(255, 80, 170, 0.85);
 }
 
-/* Nuevas secciones */
-
-.secciones-extra {
-  margin-top: 55px;
-  padding: 38px;
-  border-radius: 34px;
-  background: rgba(255, 255, 255, 0.075);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 0 60px rgba(255, 70, 180, 0.18);
-  text-align: center;
-}
-
-.secciones-extra h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #ffffff, #ff99dc, #9fc4ff);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.subtitulo {
-  color: rgba(255, 255, 255, 0.72);
-  margin-bottom: 32px;
-}
-
-.contenedor-detalles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.detalle {
-  position: relative;
-  min-height: 190px;
-  padding: 25px 20px;
-  border-radius: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.17);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(255, 105, 200, 0.25), transparent 45%),
-    rgba(255, 255, 255, 0.075);
-  color: white;
-  cursor: pointer;
-  overflow: hidden;
-  transition: 0.3s ease;
-}
-
-.detalle::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  top: -45px;
-  right: -45px;
-  background: rgba(255, 80, 180, 0.22);
-  border-radius: 50%;
-  filter: blur(4px);
-}
-
-.detalle::after {
-  content: "❤";
-  position: absolute;
-  right: 18px;
-  bottom: 12px;
-  font-size: 42px;
-  color: rgba(255, 130, 210, 0.16);
-}
-
-.detalle:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 35px rgba(255, 75, 180, 0.45);
-  border-color: rgba(255, 160, 220, 0.6);
-}
-
-.detalle .icono {
-  display: inline-grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  margin-bottom: 14px;
-  border-radius: 50%;
-  font-size: 29px;
-  background: rgba(255, 255, 255, 0.11);
-  box-shadow: 0 0 25px rgba(255, 80, 180, 0.3);
-  animation: flotarIcono 2.5s infinite ease-in-out;
-}
-
-@keyframes flotarIcono {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-.detalle h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.detalle p {
-  font-size: 0.94rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
-}
-
 /* Modal */
 
 .modal {
@@ -618,8 +508,8 @@ body {
 
 .modal-contenido {
   position: relative;
-  width: min(620px, 94vw);
-  min-height: 560px;
+  width: min(580px, 92vw);
+  min-height: 520px;
   display: grid;
   place-items: center;
   animation: aparecer 0.35s ease-out;
@@ -639,8 +529,8 @@ body {
 
 .cerrar {
   position: absolute;
-  top: 8px;
-  right: 20px;
+  top: 6px;
+  right: 18px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -652,18 +542,18 @@ body {
   z-index: 6;
 }
 
-/* Corazón grande mejor formado */
+/* Corazón grande centrado */
 
 .corazon-grande {
   position: relative;
-  width: 360px;
-  height: 330px;
-  background: linear-gradient(135deg, #ff2f9f, #ff7acd);
+  width: 350px;
+  height: 315px;
+  background: linear-gradient(135deg, #ff2f9f, #ff78cd);
   transform: rotate(-45deg);
-  border-radius: 48px 48px 38px 48px;
+  border-radius: 36px;
   box-shadow:
-    0 0 70px rgba(255, 55, 165, 0.9),
-    inset 0 0 28px rgba(255, 255, 255, 0.17);
+    0 0 65px rgba(255, 55, 165, 0.85),
+    inset 0 0 25px rgba(255, 255, 255, 0.15);
   animation: latidoGrande 1.35s infinite ease-in-out;
 }
 
@@ -671,20 +561,20 @@ body {
 .corazon-grande::after {
   content: "";
   position: absolute;
-  width: 360px;
-  height: 330px;
+  width: 350px;
+  height: 315px;
   border-radius: 50%;
   background: inherit;
 }
 
 .corazon-grande::before {
-  top: -165px;
+  top: -157px;
   left: 0;
 }
 
 .corazon-grande::after {
   top: 0;
-  left: 165px;
+  left: 157px;
 }
 
 @keyframes latidoGrande {
@@ -693,43 +583,48 @@ body {
   }
 
   40% {
-    transform: rotate(-45deg) scale(1.045);
+    transform: rotate(-45deg) scale(1.05);
   }
 
   65% {
-    transform: rotate(-45deg) scale(0.985);
+    transform: rotate(-45deg) scale(0.98);
   }
 }
 
 .texto-corazon {
   position: absolute;
   z-index: 5;
-  width: 295px;
+  width: 285px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -44%) rotate(45deg);
+  transform: translate(-50%, -43%) rotate(45deg);
   text-align: center;
   color: white;
 }
 
 .texto-corazon h2 {
-  font-size: 1.95rem;
+  font-size: 2rem;
   margin-bottom: 12px;
 }
 
 .texto-corazon p {
   font-size: 0.98rem;
-  line-height: 1.48;
+  line-height: 1.5;
   margin-bottom: 14px;
 }
 
 .texto-corazon h3 {
-  font-size: 1.04rem;
+  font-size: 1.05rem;
 }
 
 /* Celular */
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
+  body {
+    overflow-y: auto;
+    padding: 26px 0;
+  }
+
   .tarjeta {
     grid-template-columns: 1fr;
     padding: 24px 18px;
@@ -752,10 +647,6 @@ body {
   .rosa {
     bottom: 76px;
     transform: translateX(-50%) scale(0.92);
-  }
-
-  .contenedor-detalles {
-    grid-template-columns: 1fr;
   }
 
   .corazon-grande {
@@ -783,14 +674,10 @@ body {
   }
 
   .texto-corazon h2 {
-    font-size: 1.55rem;
+    font-size: 1.65rem;
   }
 
   .texto-corazon p {
-    font-size: 0.84rem;
-  }
-
-  .contenedor {
-    padding: 30px 0;
+    font-size: 0.86rem;
   }
 }
