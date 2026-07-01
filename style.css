@@ -617,67 +617,225 @@ body {
   font-size: 1.05rem;
 }
 
-/* Celular */
+/* AJUSTE PARA CELULAR */
 
 @media (max-width: 800px) {
   body {
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
     overflow-y: auto;
-    padding: 26px 0;
+    padding: 22px 0;
+    align-items: flex-start;
+  }
+
+  .contenedor {
+    width: 100%;
+    padding: 0 14px;
   }
 
   .tarjeta {
+    width: 100%;
+    min-height: auto;
     grid-template-columns: 1fr;
-    padding: 24px 18px;
+    gap: 26px;
+    padding: 24px 16px 30px;
+    border-radius: 28px;
   }
 
-  .zona-mensaje {
-    text-align: center;
-    align-items: center;
+  .zona-flor {
+    width: 100%;
+    min-height: 430px;
   }
 
   .campana {
-    width: 330px;
-    height: 455px;
+    width: 300px;
+    height: 420px;
+    border-radius: 150px 150px 26px 26px;
+  }
+
+  .aro {
+    top: -27px;
+    width: 38px;
+    height: 38px;
+    border-width: 7px;
+  }
+
+  .brillo {
+    right: 38px;
+    top: 105px;
+    height: 130px;
   }
 
   .palabras {
-    font-size: 0.76rem;
+    top: 132px;
+    gap: 22px;
+    font-size: 0.72rem;
+  }
+
+  .palabras.izquierda {
+    left: 15px;
+  }
+
+  .palabras.derecha {
+    right: 14px;
   }
 
   .rosa {
-    bottom: 76px;
-    transform: translateX(-50%) scale(0.92);
+    bottom: 62px;
+    transform: translateX(-50%) scale(0.82);
+  }
+
+  .corazon-campana {
+    bottom: 36px;
+    font-size: 48px;
+  }
+
+  .base {
+    left: 22px;
+    right: 22px;
+    bottom: 17px;
+  }
+
+  .zona-mensaje {
+    align-items: center;
+    text-align: center;
+  }
+
+  .zona-mensaje h1 {
+    font-size: 2.3rem;
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+
+  .zona-mensaje p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .boton {
+    padding: 14px 26px;
+    font-size: 0.96rem;
+  }
+
+  .zona-mensaje small {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .fondo-texto span {
+    font-size: 1.7rem;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .modal-contenido {
+    width: 100%;
+    min-height: 430px;
+  }
+
+  .cerrar {
+    top: 0;
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
   }
 
   .corazon-grande {
-    width: 285px;
-    height: 260px;
+    width: 245px;
+    height: 225px;
+    border-radius: 28px;
   }
 
   .corazon-grande::before,
   .corazon-grande::after {
-    width: 285px;
-    height: 260px;
+    width: 245px;
+    height: 225px;
   }
 
   .corazon-grande::before {
-    top: -130px;
+    top: -112px;
+    left: 0;
   }
 
   .corazon-grande::after {
-    left: 130px;
+    top: 0;
+    left: 112px;
   }
 
   .texto-corazon {
-    width: 235px;
-    transform: translate(-50%, -42%) rotate(45deg);
+    width: 205px;
+    transform: translate(-50%, -41%) rotate(45deg);
   }
 
   .texto-corazon h2 {
-    font-size: 1.65rem;
+    font-size: 1.45rem;
+    margin-bottom: 8px;
   }
 
   .texto-corazon p {
-    font-size: 0.86rem;
+    font-size: 0.78rem;
+    line-height: 1.42;
+    margin-bottom: 8px;
+  }
+
+  .texto-corazon h3 {
+    font-size: 0.82rem;
+  }
+}
+
+/* AJUSTE PARA CELULARES MÁS PEQUEÑOS */
+
+@media (max-width: 380px) {
+  .campana {
+    width: 280px;
+    height: 405px;
+  }
+
+  .rosa {
+    transform: translateX(-50%) scale(0.78);
+  }
+
+  .palabras {
+    font-size: 0.66rem;
+  }
+
+  .zona-mensaje h1 {
+    font-size: 2rem;
+  }
+
+  .zona-mensaje p {
+    font-size: 0.92rem;
+  }
+
+  .corazon-grande {
+    width: 225px;
+    height: 205px;
+  }
+
+  .corazon-grande::before,
+  .corazon-grande::after {
+    width: 225px;
+    height: 205px;
+  }
+
+  .corazon-grande::before {
+    top: -102px;
+  }
+
+  .corazon-grande::after {
+    left: 102px;
+  }
+
+  .texto-corazon {
+    width: 190px;
+  }
+
+  .texto-corazon p {
+    font-size: 0.73rem;
   }
 }
