@@ -6,78 +6,72 @@
 
 body {
   min-height: 100vh;
-  overflow: hidden;
   font-family: "Segoe UI", Arial, sans-serif;
   color: white;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(255, 0, 150, 0.25), transparent 28%),
-    radial-gradient(circle at 80% 15%, rgba(40, 120, 255, 0.25), transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(255, 80, 180, 0.18), transparent 35%),
-    linear-gradient(135deg, #050617, #10072d 55%, #04071c);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 0, 140, 0.28), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(70, 130, 255, 0.28), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(255, 90, 190, 0.20), transparent 35%),
+    linear-gradient(135deg, #040516, #10072d 55%, #040617);
 }
 
-/* TEXTO DIFUMINADO DEL FONDO */
+/* Fondo con palabras bonitas */
 
-.fondo-palabras {
+.fondo-texto {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.16;
+  opacity: 0.15;
   filter: blur(1px);
 }
 
-.fondo-palabras span {
+.fondo-texto span {
   position: absolute;
+  font-size: clamp(1.6rem, 4vw, 4.5rem);
   font-weight: 900;
-  color: rgba(255, 195, 233, 0.8);
-  text-shadow: 0 0 20px rgba(255, 70, 180, 0.7);
-  font-size: clamp(1.5rem, 4vw, 4.2rem);
+  color: rgba(255, 205, 238, 0.8);
+  text-shadow: 0 0 20px rgba(255, 80, 190, 0.9);
   animation: moverTexto 10s infinite alternate ease-in-out;
 }
 
-.fondo-palabras span:nth-child(1) {
+.fondo-texto span:nth-child(1) {
   top: 8%;
-  left: 8%;
+  left: 7%;
 }
 
-.fondo-palabras span:nth-child(2) {
-  top: 14%;
-  right: 12%;
+.fondo-texto span:nth-child(2) {
+  top: 12%;
+  right: 10%;
   animation-delay: 1s;
 }
 
-.fondo-palabras span:nth-child(3) {
+.fondo-texto span:nth-child(3) {
   top: 43%;
   left: 4%;
   animation-delay: 2s;
 }
 
-.fondo-palabras span:nth-child(4) {
-  bottom: 12%;
-  right: 8%;
+.fondo-texto span:nth-child(4) {
+  bottom: 10%;
+  right: 10%;
   animation-delay: 3s;
 }
 
-.fondo-palabras span:nth-child(5) {
+.fondo-texto span:nth-child(5) {
   bottom: 8%;
-  left: 25%;
+  left: 28%;
   animation-delay: 4s;
 }
 
-.fondo-palabras span:nth-child(6) {
-  top: 60%;
-  right: 26%;
+.fondo-texto span:nth-child(6) {
+  top: 32%;
+  left: 42%;
   animation-delay: 5s;
-}
-
-.fondo-palabras span:nth-child(7) {
-  top: 31%;
-  left: 36%;
-  animation-delay: 6s;
 }
 
 @keyframes moverTexto {
@@ -90,13 +84,13 @@ body {
   }
 }
 
-/* PARTÍCULAS */
+/* Partículas */
 
-.particulas {
+#particulas {
   position: fixed;
   inset: 0;
-  z-index: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
 .particula {
@@ -104,7 +98,7 @@ body {
   bottom: -30px;
   animation: subir linear forwards;
   opacity: 0.9;
-  filter: drop-shadow(0 0 8px rgba(255, 100, 200, 0.8));
+  filter: drop-shadow(0 0 8px rgba(255, 90, 190, 0.9));
 }
 
 @keyframes subir {
@@ -114,7 +108,7 @@ body {
   }
 }
 
-/* TARJETA */
+/* Tarjeta principal */
 
 .contenedor {
   position: relative;
@@ -125,42 +119,42 @@ body {
 .tarjeta {
   min-height: 590px;
   padding: 38px;
-  border-radius: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
   align-items: center;
+  border-radius: 36px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 0 80px rgba(255, 60, 170, 0.22),
+    0 0 80px rgba(255, 70, 180, 0.24),
     inset 0 0 35px rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(16px);
+  transition: transform 0.15s ease;
 }
 
-.lado-izquierdo,
-.lado-derecho {
+.zona-flor {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.lado-derecho {
-  align-items: flex-start;
+.zona-mensaje {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.lado-derecho h1 {
-  font-size: clamp(2.3rem, 5vw, 4.7rem);
-  line-height: 1.02;
+.zona-mensaje h1 {
+  font-size: clamp(2.3rem, 5vw, 4.6rem);
+  line-height: 1.03;
   margin-bottom: 22px;
-  background: linear-gradient(90deg, #ffffff, #ff8ed8, #92bdff);
+  background: linear-gradient(90deg, #ffffff, #ff8ed8, #93bdff);
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 0 0 30px rgba(255, 120, 210, 0.18);
 }
 
-.texto-principal {
+.zona-mensaje p {
   font-size: 1.08rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.84);
@@ -168,47 +162,47 @@ body {
 }
 
 .boton {
+  width: fit-content;
   border: none;
-  padding: 15px 30px;
+  padding: 15px 32px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #ff2e9f, #7c4dff);
   color: white;
+  background: linear-gradient(135deg, #ff2f9f, #7d4dff);
+  box-shadow: 0 0 30px rgba(255, 50, 165, 0.6);
   font-size: 1.02rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 28px rgba(255, 50, 160, 0.55);
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
 .boton:hover {
   transform: translateY(-5px) scale(1.04);
-  box-shadow: 0 0 45px rgba(255, 50, 160, 0.85);
+  box-shadow: 0 0 45px rgba(255, 50, 165, 0.9);
 }
 
-.pista {
-  margin-top: 15px;
+.zona-mensaje small {
+  margin-top: 14px;
   color: rgba(255, 255, 255, 0.58);
-  font-size: 0.92rem;
 }
 
-/* CAMPANA DE VIDRIO */
+/* Campana */
 
 .campana {
   position: relative;
-  width: 360px;
-  height: 485px;
-  border-radius: 180px 180px 28px 28px;
+  width: 365px;
+  height: 490px;
+  border-radius: 185px 185px 30px 30px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07), transparent 20%),
-    linear-gradient(145deg, rgba(17, 99, 255, 0.62), rgba(15, 20, 120, 0.55));
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 22%),
+    linear-gradient(145deg, rgba(20, 100, 255, 0.62), rgba(16, 22, 128, 0.55));
+  overflow: hidden;
   box-shadow:
     inset 0 0 45px rgba(255, 255, 255, 0.09),
-    0 0 50px rgba(46, 116, 255, 0.35);
-  overflow: hidden;
-  animation: flotarCampana 3.2s infinite ease-in-out;
+    0 0 55px rgba(55, 125, 255, 0.38);
+  animation: flotar 3s infinite ease-in-out;
 }
 
-@keyframes flotarCampana {
+@keyframes flotar {
   0%, 100% {
     transform: translateY(0);
   }
@@ -220,12 +214,12 @@ body {
 
 .aro {
   position: absolute;
-  top: -30px;
+  top: -31px;
   left: 50%;
-  width: 43px;
-  height: 43px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 8px solid rgba(62, 112, 255, 0.65);
+  border: 8px solid rgba(70, 120, 255, 0.7);
   transform: translateX(-50%);
   box-shadow: 0 0 18px rgba(70, 120, 255, 0.7);
 }
@@ -233,53 +227,52 @@ body {
 .brillo {
   position: absolute;
   right: 48px;
-  top: 120px;
+  top: 118px;
   width: 10px;
   height: 150px;
   border-radius: 999px;
-  background: linear-gradient(transparent, rgba(105, 190, 255, 0.9), transparent);
-  animation: moverBrillo 2.5s infinite ease-in-out;
+  background: linear-gradient(transparent, rgba(120, 205, 255, 0.9), transparent);
+  animation: brillo 2.5s infinite ease-in-out;
 }
 
-@keyframes moverBrillo {
+@keyframes brillo {
   0%, 100% {
     transform: translateY(0);
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
   50% {
-    transform: translateY(18px);
+    transform: translateY(20px);
     opacity: 0.45;
   }
 }
 
-/* PALABRAS A LOS LADOS */
+/* Palabras dentro de la campana */
 
 .palabras {
   position: absolute;
-  top: 152px;
+  top: 150px;
   display: grid;
-  gap: 27px;
+  gap: 26px;
+  z-index: 5;
+  font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: 1px;
-  font-size: 0.92rem;
-  color: rgba(255, 218, 245, 0.76);
-  text-shadow: 0 0 13px rgba(255, 70, 180, 0.9);
-  z-index: 4;
+  color: rgba(255, 224, 247, 0.78);
+  text-shadow: 0 0 12px rgba(255, 80, 190, 1);
 }
 
-.palabras-izquierda {
+.palabras.izquierda {
   left: 22px;
   text-align: left;
 }
 
-.palabras-derecha {
+.palabras.derecha {
   right: 20px;
   text-align: right;
 }
 
 .palabras p {
-  animation: aparecerPalabra 2.6s infinite alternate ease-in-out;
+  animation: palabras 2.5s infinite alternate ease-in-out;
 }
 
 .palabras p:nth-child(2) {
@@ -290,7 +283,7 @@ body {
   animation-delay: 1s;
 }
 
-@keyframes aparecerPalabra {
+@keyframes palabras {
   from {
     opacity: 0.35;
     transform: translateY(7px);
@@ -302,26 +295,26 @@ body {
   }
 }
 
-/* ROSA MEJORADA */
+/* Rosa mejorada */
 
 .rosa {
   position: absolute;
   left: 50%;
-  bottom: 88px;
-  width: 190px;
-  height: 310px;
+  bottom: 83px;
+  width: 200px;
+  height: 325px;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 4;
 }
 
 .flor {
   position: absolute;
-  top: 8px;
+  top: 4px;
   left: 50%;
-  width: 135px;
-  height: 125px;
+  width: 145px;
+  height: 135px;
   transform: translateX(-50%);
-  animation: respirarFlor 2.7s infinite ease-in-out;
+  animation: respirarFlor 2.8s infinite ease-in-out;
 }
 
 @keyframes respirarFlor {
@@ -332,147 +325,136 @@ body {
 
   50% {
     transform: translateX(-50%) scale(1.05);
-    filter: brightness(1.2);
+    filter: brightness(1.18);
   }
 }
 
 .petalo {
   position: absolute;
-  background: radial-gradient(circle at 35% 25%, #ffc3ef, #ff3caf 45%, #ca006d 90%);
+  background: radial-gradient(circle at 35% 25%, #ffd2f3, #ff42b5 45%, #b80063 92%);
   box-shadow:
-    0 0 22px rgba(255, 45, 170, 0.95),
-    inset 0 0 14px rgba(255, 255, 255, 0.25);
+    0 0 24px rgba(255, 50, 175, 0.95),
+    inset 0 0 15px rgba(255, 255, 255, 0.24);
 }
 
-.p1 {
+.petalo1 {
   width: 58px;
-  height: 76px;
-  left: 38px;
-  top: 2px;
+  height: 78px;
+  left: 43px;
+  top: 0;
   border-radius: 60% 60% 48% 48%;
   z-index: 6;
 }
 
-.p2 {
-  width: 60px;
-  height: 82px;
-  left: 16px;
-  top: 18px;
-  border-radius: 75% 30% 75% 35%;
-  transform: rotate(-34deg);
+.petalo2 {
+  width: 64px;
+  height: 84px;
+  left: 17px;
+  top: 20px;
+  border-radius: 75% 35% 75% 35%;
+  transform: rotate(-35deg);
   z-index: 4;
 }
 
-.p3 {
-  width: 60px;
-  height: 82px;
-  right: 16px;
-  top: 18px;
-  border-radius: 30% 75% 35% 75%;
-  transform: rotate(34deg);
+.petalo3 {
+  width: 64px;
+  height: 84px;
+  right: 17px;
+  top: 20px;
+  border-radius: 35% 75% 35% 75%;
+  transform: rotate(35deg);
   z-index: 4;
 }
 
-.p4 {
-  width: 70px;
-  height: 74px;
-  left: 3px;
-  top: 43px;
-  border-radius: 90% 30% 80% 40%;
-  transform: rotate(-18deg);
-  z-index: 3;
-  background: radial-gradient(circle at 35% 25%, #ffb5e9, #ff279d 45%, #a60058 90%);
-}
-
-.p5 {
-  width: 70px;
-  height: 74px;
-  right: 3px;
-  top: 43px;
-  border-radius: 30% 90% 40% 80%;
-  transform: rotate(18deg);
-  z-index: 3;
-  background: radial-gradient(circle at 35% 25%, #ffb5e9, #ff279d 45%, #a60058 90%);
-}
-
-.p6 {
+.petalo4 {
   width: 78px;
-  height: 72px;
-  left: 28px;
-  top: 53px;
+  height: 76px;
+  left: 0;
+  top: 52px;
+  border-radius: 90% 30% 80% 45%;
+  transform: rotate(-16deg);
+  z-index: 3;
+  background: radial-gradient(circle at 35% 25%, #ffc0ec, #ff279e 45%, #9e0055 92%);
+}
+
+.petalo5 {
+  width: 78px;
+  height: 76px;
+  right: 0;
+  top: 52px;
+  border-radius: 30% 90% 45% 80%;
+  transform: rotate(16deg);
+  z-index: 3;
+  background: radial-gradient(circle at 35% 25%, #ffc0ec, #ff279e 45%, #9e0055 92%);
+}
+
+.petalo6 {
+  width: 82px;
+  height: 76px;
+  left: 31px;
+  top: 58px;
   border-radius: 50% 50% 55% 55%;
   z-index: 5;
-  background: radial-gradient(circle at 35% 25%, #ffd4f3, #ff4fba 45%, #bd0068 90%);
+  background: radial-gradient(circle at 35% 25%, #ffe0f7, #ff62c4 45%, #bd0068 92%);
 }
 
-.centro-flor {
+.centro {
   position: absolute;
   left: 50%;
-  top: 51px;
-  width: 35px;
-  height: 42px;
+  top: 53px;
+  width: 36px;
+  height: 45px;
   transform: translateX(-50%);
   border-radius: 50% 50% 45% 45%;
-  background: radial-gradient(circle at 40% 25%, #ffe4f8, #ff65c5, #c90070);
+  background: radial-gradient(circle at 40% 25%, #fff0fb, #ff69c7, #be0069);
   box-shadow:
-    0 0 22px rgba(255, 80, 190, 1),
+    0 0 23px rgba(255, 90, 195, 1),
     inset 0 0 10px rgba(255, 255, 255, 0.35);
   z-index: 8;
 }
 
 .tallo {
   position: absolute;
-  top: 112px;
-  left: 91px;
+  top: 123px;
+  left: 96px;
   width: 8px;
-  height: 185px;
+  height: 180px;
   border-radius: 999px;
-  background: linear-gradient(#29e479, #087c3b);
-  box-shadow: 0 0 14px rgba(28, 255, 128, 0.52);
+  background: linear-gradient(#31ec82, #087b3c);
+  box-shadow: 0 0 15px rgba(40, 255, 130, 0.55);
 }
 
 .hoja {
   position: absolute;
-  width: 62px;
-  height: 34px;
-  background: radial-gradient(circle at 35% 35%, #72ff9f, #14b95a 55%, #086d35);
+  width: 64px;
+  height: 35px;
+  background: radial-gradient(circle at 35% 35%, #7cffaa, #15b95c 55%, #076a34);
   box-shadow:
-    0 0 15px rgba(45, 255, 130, 0.55),
+    0 0 15px rgba(40, 255, 130, 0.55),
     inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .hoja1 {
-  top: 150px;
-  left: 36px;
+  top: 164px;
+  left: 38px;
   border-radius: 90% 10% 90% 20%;
   transform: rotate(25deg);
 }
 
 .hoja2 {
-  top: 166px;
+  top: 188px;
   right: 35px;
   border-radius: 10% 90% 20% 90%;
   transform: rotate(-25deg);
 }
 
-.hoja3 {
-  top: 215px;
-  left: 45px;
-  width: 52px;
-  height: 29px;
-  border-radius: 90% 10% 90% 20%;
-  transform: rotate(34deg);
-}
+/* Corazón dentro de la campana */
 
-/* CORAZÓN PEQUEÑO CENTRADO Y BONITO */
-
-.corazon-pequeno {
+.corazon-campana {
   position: absolute;
   left: 50%;
-  bottom: 48px;
+  bottom: 45px;
   transform: translateX(-50%);
-  width: 68px;
-  height: 62px;
   border: none;
   background: transparent;
   color: #ff2f8f;
@@ -480,16 +462,16 @@ body {
   cursor: pointer;
   z-index: 6;
   filter: drop-shadow(0 0 18px rgba(255, 40, 145, 0.95));
-  animation: latidoCorazon 1.25s infinite ease-in-out;
+  animation: latidoPequeno 1.2s infinite ease-in-out;
 }
 
-@keyframes latidoCorazon {
+@keyframes latidoPequeno {
   0%, 100% {
     transform: translateX(-50%) scale(1);
   }
 
   35% {
-    transform: translateX(-50%) scale(1.18);
+    transform: translateX(-50%) scale(1.17);
   }
 
   60% {
@@ -497,10 +479,10 @@ body {
   }
 }
 
-.linea-base {
+.base {
   position: absolute;
-  left: 24px;
-  right: 24px;
+  left: 25px;
+  right: 25px;
   bottom: 20px;
   height: 4px;
   border-radius: 999px;
@@ -508,7 +490,7 @@ body {
   box-shadow: 0 0 17px rgba(255, 80, 170, 0.85);
 }
 
-/* MODAL */
+/* Modal */
 
 .modal {
   position: fixed;
@@ -516,7 +498,7 @@ body {
   z-index: 20;
   display: none;
   place-items: center;
-  background: rgba(3, 4, 18, 0.8);
+  background: rgba(3, 4, 18, 0.82);
   backdrop-filter: blur(10px);
 }
 
@@ -524,19 +506,19 @@ body {
   display: grid;
 }
 
-.contenido-modal {
+.modal-contenido {
   position: relative;
-  width: min(560px, 92vw);
+  width: min(580px, 92vw);
   min-height: 520px;
   display: grid;
   place-items: center;
-  animation: aparecerModal 0.35s ease-out;
+  animation: aparecer 0.35s ease-out;
 }
 
-@keyframes aparecerModal {
+@keyframes aparecer {
   from {
     opacity: 0;
-    transform: scale(0.7);
+    transform: scale(0.72);
   }
 
   to {
@@ -547,8 +529,8 @@ body {
 
 .cerrar {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 6px;
+  right: 18px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -557,10 +539,10 @@ body {
   color: white;
   font-size: 30px;
   cursor: pointer;
-  z-index: 5;
+  z-index: 6;
 }
 
-/* CORAZÓN GRANDE BIEN CENTRADO */
+/* Corazón grande centrado */
 
 .corazon-grande {
   position: relative;
@@ -583,7 +565,6 @@ body {
   height: 315px;
   border-radius: 50%;
   background: inherit;
-  box-shadow: inherit;
 }
 
 .corazon-grande::before {
@@ -610,33 +591,33 @@ body {
   }
 }
 
-.mensaje-corazon {
+.texto-corazon {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   width: 285px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -45%) rotate(45deg);
+  transform: translate(-50%, -43%) rotate(45deg);
   text-align: center;
   color: white;
 }
 
-.mensaje-corazon h2 {
+.texto-corazon h2 {
   font-size: 2rem;
   margin-bottom: 12px;
 }
 
-.mensaje-corazon p {
+.texto-corazon p {
   font-size: 0.98rem;
   line-height: 1.5;
   margin-bottom: 14px;
 }
 
-.mensaje-corazon h3 {
+.texto-corazon h3 {
   font-size: 1.05rem;
 }
 
-/* RESPONSIVE */
+/* Celular */
 
 @media (max-width: 800px) {
   body {
@@ -649,18 +630,23 @@ body {
     padding: 24px 18px;
   }
 
+  .zona-mensaje {
+    text-align: center;
+    align-items: center;
+  }
+
   .campana {
     width: 330px;
     height: 455px;
   }
 
   .palabras {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
   }
 
-  .lado-derecho {
-    align-items: center;
-    text-align: center;
+  .rosa {
+    bottom: 76px;
+    transform: translateX(-50%) scale(0.92);
   }
 
   .corazon-grande {
@@ -682,16 +668,16 @@ body {
     left: 130px;
   }
 
-  .mensaje-corazon {
+  .texto-corazon {
     width: 235px;
-    transform: translate(-50%, -43%) rotate(45deg);
+    transform: translate(-50%, -42%) rotate(45deg);
   }
 
-  .mensaje-corazon h2 {
+  .texto-corazon h2 {
     font-size: 1.65rem;
   }
 
-  .mensaje-corazon p {
+  .texto-corazon p {
     font-size: 0.86rem;
   }
 }
