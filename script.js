@@ -1,67 +1,88 @@
-const openBtn = document.getElementById("openBtn");
-const heartBtn = document.getElementById("heartBtn");
-const closeBtn = document.getElementById("closeBtn");
+const abrirMensaje = document.getElementById("abrirMensaje");
+const corazonPequeno = document.getElementById("corazonPequeno");
+const cerrar = document.getElementById("cerrar");
 const modal = document.getElementById("modal");
-const particles = document.getElementById("particles");
+const particulas = document.getElementById("particulas");
+const tarjeta = document.querySelector(".tarjeta");
 
-function openMessage() {
-  modal.classList.add("show");
-  createBurst();
+function abrirModal() {
+  modal.classList.add("activo");
+  explosionDeAmor();
 }
 
-function closeMessage() {
-  modal.classList.remove("show");
+function cerrarModal() {
+  modal.classList.remove("activo");
 }
 
-openBtn.addEventListener("click", openMessage);
-heartBtn.addEventListener("click", openMessage);
-closeBtn.addEventListener("click", closeMessage);
+abrirMensaje.addEventListener("click", abrirModal);
+corazonPequeno.addEventListener("click", abrirModal);
+cerrar.addEventListener("click", cerrarModal);
 
-modal.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    closeMessage();
+modal.addEventListener("click", function(evento) {
+  if (evento.target === modal) {
+    cerrarModal();
   }
 });
 
-function createParticle() {
-  const particle = document.createElement("div");
-  particle.classList.add("particle");
+function crearParticula() {
+  const particula = document.createElement("div");
+  particula.classList.add("particula");
 
-  const symbols = ["❤", "✦", "❀", "✧", "♡"];
-  particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+  const simbolos = ["❤", "♡", "✦", "✧", "❀", "🌸"];
+  particula.textContent = simbolos[Math.floor(Math.random() * simbolos.length)];
 
-  particle.style.left = Math.random() * 100 + "vw";
-  particle.style.animationDuration = Math.random() * 4 + 5 + "s";
-  particle.style.fontSize = Math.random() * 14 + 14 + "px";
+  particula.style.left = Math.random() * 100 + "vw";
+  particula.style.fontSize = Math.random() * 16 + 15 + "px";
+  particula.style.animationDuration = Math.random() * 4 + 5 + "s";
 
-  particles.appendChild(particle);
+  particulas.appendChild(particula);
 
-  setTimeout(() => {
-    particle.remove();
+  setTimeout(function() {
+    particula.remove();
   }, 9000);
 }
 
-function createBurst() {
-  for (let i = 0; i < 35; i++) {
-    setTimeout(createParticle, i * 35);
+function explosionDeAmor() {
+  for (let i = 0; i < 45; i++) {
+    setTimeout(crearParticula, i * 28);
   }
 }
 
-setInterval(createParticle, 700);
+setInterval(crearParticula, 650);
 
-document.addEventListener("mousemove", function(event) {
-  if (Math.random() > 0.82) {
-    const heart = document.createElement("div");
-    heart.classList.add("particle");
-    heart.textContent = "♡";
-    heart.style.left = event.clientX + "px";
-    heart.style.top = event.clientY + "px";
-    heart.style.bottom = "auto";
-    heart.style.animationDuration = "2s";
-    particles.appendChild(heart);
+document.addEventListener("mousemove", function(evento) {
+  if (Math.random() > 0.84) {
+    const brillo = document.createElement("div");
+    brillo.classList.add("particula");
+    brillo.textContent = "♡";
+    brillo.style.left = evento.clientX + "px";
+    brillo.style.top = evento.clientY + "px";
+    brillo.style.bottom = "auto";
+    brillo.style.fontSize = "18px";
+    brillo.style.animationDuration = "2s";
 
-    setTimeout(() => {
-      heart.remove();
+    particulas.appendChild(brillo);
+
+    setTimeout(function() {
+      brillo.remove();
     }, 2000);
   }
+});
+
+tarjeta.addEventListener("mousemove", function(evento) {
+  const rect = tarjeta.getBoundingClientRect();
+  const x = evento.clientX - rect.left;
+  const y = evento.clientY - rect.top;
+
+  const centroX = rect.width / 2;
+  const centroY = rect.height / 2;
+
+  const rotarX = (y - centroY) / 45;
+  const rotarY = (centroX - x) / 45;
+
+  tarjeta.style.transform = `perspective(1000px) rotateX(${rotarX}deg) rotateY(${rotarY}deg)`;
+});
+
+tarjeta.addEventListener("mouseleave", function() {
+  tarjeta.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
 });
