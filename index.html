@@ -1,42 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buenas noches, mi amor</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Aniversario</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background-text">
+    <span>amor</span><span>mi vida</span><span>siempre</span><span>contigo</span>
+    <span>te amo</span><span>felicidad</span><span>nuestro amor</span><span>aniversario</span>
+  </div>
 
-    <div class="cielo">
-        <div class="luna"></div>
+  <div class="particles" id="particles"></div>
 
-        <div class="nube nube1"></div>
-        <div class="nube nube2"></div>
-        <div class="nube nube3"></div>
+  <main class="card">
+    <section class="glass-dome">
+      <div class="shine"></div>
 
-        <div class="estrellas" id="estrellas"></div>
+      <div class="floating-words left">
+        <p>Mi paz</p>
+        <p>Mi alegría</p>
+        <p>Mi hogar</p>
+      </div>
 
-        <div class="tarjeta">
-            <div class="corazon-grande">❤</div>
+      <div class="floating-words right">
+        <p>Mi amor</p>
+        <p>Mi sueño</p>
+        <p>Mi siempre</p>
+      </div>
 
-            <h1>Buenas noches, mi amor</h1>
+      <div class="rose">
+        <div class="petal petal-1"></div>
+        <div class="petal petal-2"></div>
+        <div class="petal petal-3"></div>
+        <div class="petal petal-4"></div>
+        <div class="stem"></div>
+        <div class="leaf leaf-left"></div>
+        <div class="leaf leaf-right"></div>
+      </div>
 
-            <p class="mensaje" id="mensaje">
-                Que esta noche descanses bonito, que tus sueños sean tranquilos
-                y que recuerdes lo mucho que te quiero.
-            </p>
+      <button class="secret-heart" id="heartBtn" aria-label="Abrir mensaje">
+        <span>❤</span>
+      </button>
 
-            <button onclick="cambiarMensaje()">Toca aquí para un mensajito</button>
+      <div class="base-line"></div>
+    </section>
 
-            <div class="frase" id="frase">
-                Eres mi pensamiento bonito antes de dormir.
-            </div>
+    <section class="message">
+      <h1>Feliz Aniversario, mi amor</h1>
+      <p>
+        Gracias por ser mi lugar bonito, mi compañía favorita y la razón de tantas sonrisas.
+        Hoy celebro nuestro amor, nuestra historia y todo lo hermoso que aún nos espera.
+      </p>
+      <button id="openBtn">Toca para ver mi mensaje</button>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close" id="closeBtn">×</button>
+      <div class="big-heart">
+        <div class="inside-heart">
+          <h2>Para ti</h2>
+          <p>
+            Mi amor por ti seguirá floreciendo cada día.
+            Gracias por caminar conmigo, por tu ternura, por tu paciencia
+            y por hacer que la vida sea más bonita.
+          </p>
+          <strong>Te amo hoy, mañana y siempre.</strong>
         </div>
-
-        <div class="suelo"></div>
+      </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
