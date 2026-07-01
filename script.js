@@ -4,9 +4,30 @@ const cerrar = document.getElementById("cerrar");
 const modal = document.getElementById("modal");
 const particulas = document.getElementById("particulas");
 const tarjeta = document.querySelector(".tarjeta");
+const tituloModal = document.getElementById("tituloModal");
+const mensajeModal = document.getElementById("mensajeModal");
+const detalles = document.querySelectorAll(".detalle");
 
-abrirMensaje.addEventListener("click", abrirModal);
-corazonCampana.addEventListener("click", abrirModal);
+abrirMensaje.addEventListener("click", function() {
+  tituloModal.textContent = "Para ti";
+  mensajeModal.textContent = "Mi amor por ti florece cada día más. Gracias por tu ternura, por tu paciencia, por tus detalles y por hacer mi vida más bonita.";
+  abrirModal();
+});
+
+corazonCampana.addEventListener("click", function() {
+  tituloModal.textContent = "Mi corazón";
+  mensajeModal.textContent = "Este corazón guarda todo lo que siento por ti: amor, gratitud, alegría y el deseo de seguir viviendo momentos hermosos juntos.";
+  abrirModal();
+});
+
+detalles.forEach(function(detalle) {
+  detalle.addEventListener("click", function() {
+    tituloModal.textContent = detalle.dataset.titulo;
+    mensajeModal.textContent = detalle.dataset.mensaje;
+    abrirModal();
+  });
+});
+
 cerrar.addEventListener("click", cerrarModal);
 
 modal.addEventListener("click", function(evento) {
