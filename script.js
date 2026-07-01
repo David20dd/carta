@@ -1,21 +1,12 @@
 const abrirMensaje = document.getElementById("abrirMensaje");
-const corazonPequeno = document.getElementById("corazonPequeno");
+const corazonCampana = document.getElementById("corazonCampana");
 const cerrar = document.getElementById("cerrar");
 const modal = document.getElementById("modal");
 const particulas = document.getElementById("particulas");
 const tarjeta = document.querySelector(".tarjeta");
 
-function abrirModal() {
-  modal.classList.add("activo");
-  explosionDeAmor();
-}
-
-function cerrarModal() {
-  modal.classList.remove("activo");
-}
-
 abrirMensaje.addEventListener("click", abrirModal);
-corazonPequeno.addEventListener("click", abrirModal);
+corazonCampana.addEventListener("click", abrirModal);
 cerrar.addEventListener("click", cerrarModal);
 
 modal.addEventListener("click", function(evento) {
@@ -24,11 +15,20 @@ modal.addEventListener("click", function(evento) {
   }
 });
 
+function abrirModal() {
+  modal.classList.add("activo");
+  explosion();
+}
+
+function cerrarModal() {
+  modal.classList.remove("activo");
+}
+
 function crearParticula() {
   const particula = document.createElement("div");
-  particula.classList.add("particula");
-
   const simbolos = ["❤", "♡", "✦", "✧", "❀", "🌸"];
+
+  particula.classList.add("particula");
   particula.textContent = simbolos[Math.floor(Math.random() * simbolos.length)];
 
   particula.style.left = Math.random() * 100 + "vw";
@@ -42,7 +42,7 @@ function crearParticula() {
   }, 9000);
 }
 
-function explosionDeAmor() {
+function explosion() {
   for (let i = 0; i < 45; i++) {
     setTimeout(crearParticula, i * 28);
   }
@@ -51,8 +51,9 @@ function explosionDeAmor() {
 setInterval(crearParticula, 650);
 
 document.addEventListener("mousemove", function(evento) {
-  if (Math.random() > 0.84) {
+  if (Math.random() > 0.85) {
     const brillo = document.createElement("div");
+
     brillo.classList.add("particula");
     brillo.textContent = "♡";
     brillo.style.left = evento.clientX + "px";
