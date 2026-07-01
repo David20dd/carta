@@ -1,74 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feliz Aniversario</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background-text">
-    <span>amor</span><span>mi vida</span><span>siempre</span><span>contigo</span>
-    <span>te amo</span><span>felicidad</span><span>nuestro amor</span><span>aniversario</span>
+
+  <div class="fondo-palabras">
+    <span>te amo</span>
+    <span>mi amor</span>
+    <span>siempre juntos</span>
+    <span>eres mi felicidad</span>
+    <span>nuestro aniversario</span>
+    <span>mi vida</span>
+    <span>contigo todo es bonito</span>
   </div>
 
-  <div class="particles" id="particles"></div>
+  <div class="particulas" id="particulas"></div>
 
-  <main class="card">
-    <section class="glass-dome">
-      <div class="shine"></div>
+  <main class="contenedor">
+    <section class="tarjeta">
 
-      <div class="floating-words left">
-        <p>Mi paz</p>
-        <p>Mi alegría</p>
-        <p>Mi hogar</p>
+      <div class="lado-izquierdo">
+        <div class="campana">
+          <div class="aro"></div>
+          <div class="brillo"></div>
+
+          <div class="palabras palabras-izquierda">
+            <p>Mi paz</p>
+            <p>Mi alegría</p>
+            <p>Mi hogar</p>
+          </div>
+
+          <div class="palabras palabras-derecha">
+            <p>Mi amor</p>
+            <p>Mi sueño</p>
+            <p>Mi siempre</p>
+          </div>
+
+          <div class="rosa">
+            <div class="flor">
+              <div class="petalo p1"></div>
+              <div class="petalo p2"></div>
+              <div class="petalo p3"></div>
+              <div class="petalo p4"></div>
+              <div class="petalo p5"></div>
+              <div class="petalo p6"></div>
+              <div class="centro-flor"></div>
+            </div>
+
+            <div class="tallo"></div>
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+            <div class="hoja hoja3"></div>
+          </div>
+
+          <button class="corazon-pequeno" id="corazonPequeno">
+            ❤
+          </button>
+
+          <div class="linea-base"></div>
+        </div>
       </div>
 
-      <div class="floating-words right">
-        <p>Mi amor</p>
-        <p>Mi sueño</p>
-        <p>Mi siempre</p>
+      <div class="lado-derecho">
+        <h1>Feliz Aniversario, mi amor</h1>
+        <p class="texto-principal">
+          Hoy celebro lo más bonito que tengo: nuestro amor.
+          Gracias por estar conmigo, por hacer mis días más felices
+          y por ser esa persona especial que hace que todo valga la pena.
+        </p>
+
+        <button class="boton" id="abrirMensaje">
+          Abrir mi corazón
+        </button>
+
+        <p class="pista">
+          También puedes tocar el corazón dentro de la campana.
+        </p>
       </div>
 
-      <div class="rose">
-        <div class="petal petal-1"></div>
-        <div class="petal petal-2"></div>
-        <div class="petal petal-3"></div>
-        <div class="petal petal-4"></div>
-        <div class="stem"></div>
-        <div class="leaf leaf-left"></div>
-        <div class="leaf leaf-right"></div>
-      </div>
-
-      <button class="secret-heart" id="heartBtn" aria-label="Abrir mensaje">
-        <span>❤</span>
-      </button>
-
-      <div class="base-line"></div>
-    </section>
-
-    <section class="message">
-      <h1>Feliz Aniversario, mi amor</h1>
-      <p>
-        Gracias por ser mi lugar bonito, mi compañía favorita y la razón de tantas sonrisas.
-        Hoy celebro nuestro amor, nuestra historia y todo lo hermoso que aún nos espera.
-      </p>
-      <button id="openBtn">Toca para ver mi mensaje</button>
     </section>
   </main>
 
   <div class="modal" id="modal">
-    <div class="modal-content">
-      <button class="close" id="closeBtn">×</button>
-      <div class="big-heart">
-        <div class="inside-heart">
+    <div class="contenido-modal">
+      <button class="cerrar" id="cerrar">×</button>
+
+      <div class="corazon-grande">
+        <div class="mensaje-corazon">
           <h2>Para ti</h2>
           <p>
-            Mi amor por ti seguirá floreciendo cada día.
-            Gracias por caminar conmigo, por tu ternura, por tu paciencia
-            y por hacer que la vida sea más bonita.
+            Mi amor por ti florece cada día más.
+            Gracias por tu cariño, tu paciencia, tu ternura
+            y por convertir cada momento en un recuerdo hermoso.
           </p>
-          <strong>Te amo hoy, mañana y siempre.</strong>
+          <h3>Te amo hoy, mañana y siempre.</h3>
         </div>
       </div>
     </div>
