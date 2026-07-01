@@ -1,68 +1,67 @@
-const frases = [
-    "Descansa, mi amor. Mañana será un día bonito y yo seguiré pensando en ti.",
-    "Que la luna cuide tus sueños y que mi cariño te acompañe toda la noche.",
-    "Antes de dormir, solo quiero recordarte que eres muy especial para mí.",
-    "Cierra tus ojitos y duerme tranquila, mi amor. Te quiero muchísimo.",
-    "Aunque no esté a tu lado, mi corazón siempre te abraza antes de dormir.",
-    "Buenas noches, preciosa. Que sueñes bonito y despiertes con una sonrisa."
-];
+const openBtn = document.getElementById("openBtn");
+const heartBtn = document.getElementById("heartBtn");
+const closeBtn = document.getElementById("closeBtn");
+const modal = document.getElementById("modal");
+const particles = document.getElementById("particles");
 
-const mensajes = [
-    "Que esta noche descanses bonito, que tus sueños sean tranquilos y que recuerdes lo mucho que te quiero.",
-    "Hoy quiero que duermas con paz, sabiendo que eres una de las personas más lindas de mi vida.",
-    "Mi deseo para esta noche es que todo cansancio se vaya y solo queden sueños hermosos para ti.",
-    "Gracias por existir y por hacer mis días más bonitos. Buenas noches, mi amor."
-];
-
-function crearEstrellas() {
-    const contenedor = document.getElementById("estrellas");
-
-    for (let i = 0; i < 85; i++) {
-        let estrella = document.createElement("div");
-        estrella.classList.add("estrella");
-
-        estrella.style.left = Math.random() * 100 + "vw";
-        estrella.style.top = Math.random() * 100 + "vh";
-        estrella.style.animationDelay = Math.random() * 3 + "s";
-
-        contenedor.appendChild(estrella);
-    }
+function openMessage() {
+  modal.classList.add("show");
+  createBurst();
 }
 
-function cambiarMensaje() {
-    const frase = document.getElementById("frase");
-    const mensaje = document.getElementById("mensaje");
-
-    let posicionFrase = Math.floor(Math.random() * frases.length);
-    let posicionMensaje = Math.floor(Math.random() * mensajes.length);
-
-    frase.textContent = frases[posicionFrase];
-    mensaje.textContent = mensajes[posicionMensaje];
-
-    crearCorazones();
+function closeMessage() {
+  modal.classList.remove("show");
 }
 
-function crearCorazones() {
-    for (let i = 0; i < 12; i++) {
-        let corazon = document.createElement("div");
-        corazon.classList.add("corazon");
-        corazon.textContent = "❤";
+openBtn.addEventListener("click", openMessage);
+heartBtn.addEventListener("click", openMessage);
+closeBtn.addEventListener("click", closeMessage);
 
-        corazon.style.left = Math.random() * 100 + "vw";
-        corazon.style.bottom = "40px";
-        corazon.style.fontSize = (18 + Math.random() * 22) + "px";
-        corazon.style.animationDuration = (3 + Math.random() * 2) + "s";
+modal.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    closeMessage();
+  }
+});
 
-        document.body.appendChild(corazon);
+function createParticle() {
+  const particle = document.createElement("div");
+  particle.classList.add("particle");
 
-        setTimeout(() => {
-            corazon.remove();
-        }, 5000);
-    }
+  const symbols = ["❤", "✦", "❀", "✧", "♡"];
+  particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+  particle.style.left = Math.random() * 100 + "vw";
+  particle.style.animationDuration = Math.random() * 4 + 5 + "s";
+  particle.style.fontSize = Math.random() * 14 + 14 + "px";
+
+  particles.appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 9000);
 }
 
-crearEstrellas();
+function createBurst() {
+  for (let i = 0; i < 35; i++) {
+    setTimeout(createParticle, i * 35);
+  }
+}
 
-setInterval(() => {
-    crearCorazones();
-}, 3500);
+setInterval(createParticle, 700);
+
+document.addEventListener("mousemove", function(event) {
+  if (Math.random() > 0.82) {
+    const heart = document.createElement("div");
+    heart.classList.add("particle");
+    heart.textContent = "♡";
+    heart.style.left = event.clientX + "px";
+    heart.style.top = event.clientY + "px";
+    heart.style.bottom = "auto";
+    heart.style.animationDuration = "2s";
+    particles.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
+});
